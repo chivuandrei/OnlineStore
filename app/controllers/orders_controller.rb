@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  
   skip_before_action :authorize, only:  [:new, :create]
 
   include CurrentCart
@@ -18,7 +19,7 @@ class OrdersController < ApplicationController
       return
     end
 
-    @order=Order.new
+    @order = Order.new
   end
 
   def edit

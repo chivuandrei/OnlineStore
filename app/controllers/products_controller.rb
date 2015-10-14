@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
+  
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query].present?
-      @products=Product.search(params[:query])
+      @products = Product.search(params[:query])
     else
       @products = Product.all
     end
